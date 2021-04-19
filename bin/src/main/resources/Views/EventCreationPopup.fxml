@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="408.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EventCreationPopupController">
+   <children>
+      <VBox alignment="TOP_RIGHT" layoutX="8.0" layoutY="8.0" prefHeight="400.0" prefWidth="300.0">
+         <children>
+            <StackPane prefHeight="138.0" prefWidth="290.0" style="-fx-background-color: #EEEEEE;">
+               <children>
+                  <ImageView fx:id="eventImage" fitHeight="150.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="selectImageButton" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#fileChooser" style="-fx-text-fill: #FFFFFF; -fx-background-color: #434FE2; -fx-font-weight: BOLD;" text="+ Select Image" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+            <TextField fx:id="eventName" prefHeight="41.0" prefWidth="270.0" promptText="Event Name">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <GridPane prefHeight="73.0" prefWidth="290.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <DatePicker fx:id="startingDate" prefHeight="25.0" prefWidth="100.0" promptText="From">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="15.0" top="30.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <DatePicker fx:id="endingDate" prefHeight="25.0" prefWidth="100.0" promptText="To" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="20.0" top="10.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <Label text="-" textFill="#cdcbcb" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="142.0" top="45.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="startTimeSpinner" prefHeight="25.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="35.0" top="30.0" />
+                     </GridPane.margin>
+                  </Spinner>
+                  <Spinner fx:id="endTimeSpinner" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="35.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Spinner> 
+               </children>
+            </GridPane>
+            <HBox prefHeight="74.0" prefWidth="300.0">
+               <children>
+                  <TextArea fx:id="eventDesc" prefHeight="58.0" prefWidth="298.0" promptText="Event Description">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="deletButton" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="25.0" prefWidth="70.0" text="Delete" visible="false">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="70.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#closePopup" prefHeight="27.0" prefWidth="70.0" text="Cancel">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="createButton" mnemonicParsing="false" onAction="#saveEvent" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #434FE2;" text="Create" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
